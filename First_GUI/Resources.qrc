@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>img/Chess-Board-PNG-Images-HD.png</file>
+        <file>img/White_Knight_resized.png</file>
+        <file>img/chesshorse.png</file>
+        <file>img/horse2.png</file>
+        <file>img/bishop.png</file>
+    </qresource>
+</RCC>
