@@ -25,15 +25,12 @@ void MainWindow::takeParameters(string target,string init, char type)
 {
     int x1 = (target.at(0)-init.at(0))*83;
     int y1 = (target.at(1)-init.at(1))*83;
-    if(type == 'h')
-    {
-   ui->label_2->move(ui->label_2->x()+x1,ui->label_2->y()-y1);
+    if(type == 'h'){
+        ui->label_2->move(ui->label_2->x()+x1,ui->label_2->y()-y1);
     }
-    else if(type == 'b')
-    {
-ui->bishop->move(ui->bishop->x()+x1,ui->bishop->y()-y1);
+    else if(type == 'b'){
+        ui->label_3->move(ui->label_3->x()+x1,ui->label_3->y()-y1);
     }
-    //on_pushButton_2_clicked(x,y);
 }
 
 
