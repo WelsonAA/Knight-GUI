@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
     x.addNexts();
     cout<<"Enter a position on the chess board\n";
     string str;
-    cin>>str;
-    //cout<<x.cb[0][0];
-    x.printNode(str);
+//    cin>>str;
+//    //cout<<x.cb[0][0];
+//    x.printNode(str);
     QApplication a(argc, argv);
 
     /*QTranslator translator;

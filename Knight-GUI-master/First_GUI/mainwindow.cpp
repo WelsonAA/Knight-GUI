@@ -25,7 +25,9 @@ void MainWindow::takeParameters(string target,string init, char type)
 {
     int x1 = (target.at(0)-init.at(0))*83;
     int y1 = (target.at(1)-init.at(1))*83;
+     ui->label_2->move(ui->label_2->x()+(init[0]*83),ui->label_2->y()+(init[1]*83));
     if(type == 'h'){
+
         ui->label_2->move(ui->label_2->x()+x1,ui->label_2->y()-y1);
     }
     else if(type == 'b'){
@@ -38,7 +40,7 @@ void MainWindow::takeParameters(string target,string init, char type)
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    takeParameters("g3", "h1",'h');
+    takeParameters("d3", "h1",'h');
 }
 
 
