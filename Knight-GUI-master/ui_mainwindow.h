@@ -32,6 +32,10 @@ public:
     QLabel *pawn1;
     QLabel *pawn2;
     QLabel *label_3;
+    QLabel *label_4;
+    QLabel *no1;
+    QLabel *no2;
+    QLabel *no3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -68,7 +72,7 @@ public:
         label->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/720px-Chessboard480.svg.png")));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(752, 711, 71, 81));
+        label_2->setGeometry(QRect(160, 800, 71, 81));
         label_2->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/horseya.png")));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName("pushButton_2");
@@ -86,7 +90,7 @@ public:
         pawn2->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/pawnBlacks.png")));
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(160, 720, 75, 75));
+        label_3->setGeometry(QRect(160, 800, 75, 75));
         QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
@@ -94,10 +98,26 @@ public:
         label_3->setSizePolicy(sizePolicy1);
         label_3->setMinimumSize(QSize(75, 75));
         label_3->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/Bishopaya.png")));
+        label_4 = new QLabel(centralwidget);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(160, 800, 61, 71));
+        label_4->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/horseya.png")));
+        no1 = new QLabel(centralwidget);
+        no1->setObjectName("no1");
+        no1->setGeometry(QRect(160, 800, 61, 71));
+        no1->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/horseya.png")));
+        no2 = new QLabel(centralwidget);
+        no2->setObjectName("no2");
+        no2->setGeometry(QRect(160, 800, 61, 71));
+        no2->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/horseya.png")));
+        no3 = new QLabel(centralwidget);
+        no3->setObjectName("no3");
+        no3->setGeometry(QRect(160, 800, 61, 71));
+        no3->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/horseya.png")));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 2000, 17));
+        menubar->setGeometry(QRect(0, 0, 2000, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -120,6 +140,10 @@ public:
         pawn1->setText(QString());
         pawn2->setText(QString());
         label_3->setText(QString());
+        label_4->setText(QString());
+        no1->setText(QString());
+        no2->setText(QString());
+        no3->setText(QString());
     } // retranslateUi
 
 };
