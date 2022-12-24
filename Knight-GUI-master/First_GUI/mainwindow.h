@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+
 #include <QMainWindow>
 #include <QPixmap>
 using namespace std;
@@ -14,16 +15,16 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    void on_pushButton_2_clicked(int x, int y);
+
     void takeParameters(string target,string init, char type);
+    void setInitial(string initial);
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
 
 
-    void on_pushButton_2_clicked();
-
+void on_pushButton_2_clicked();
     void on_pushButton_3_clicked();
 
 private:
