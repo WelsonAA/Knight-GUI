@@ -13,20 +13,14 @@ int main(int argc, char *argv[])
            x.addNexts();
            x.addPathK(x.dest, 0);
            x.choosePathK();
-//          string t = x.du();
-    cout<<"Enter a position on the chess board\n";
-    string str;
-//    cin>>str;
-//    //cout<<x.cb[0][0];
-//    x.printNode(str);
+
     QApplication ab(argc, argv);
 
-MainWindow w;
+MainWindow w(nullptr,&x);
 
 
-
-       w.setInitial(x.src->pos);
-
+       //w.setInitial(x.src->pos);
+/*
  if(!x.pathK.empty()){
  w.setInitial1(x.pathK.front()->pos);
  x.pathK.pop();}
@@ -35,7 +29,7 @@ MainWindow w;
  x.pathK.pop();}
  if(!x.pathK.empty()){
  w.setInitial3(x.pathK.front()->pos);
- x.pathK.pop();}
+ x.pathK.pop();}*/
 
   w.show();
     return ab.exec();

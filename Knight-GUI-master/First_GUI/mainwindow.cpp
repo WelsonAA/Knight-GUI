@@ -5,6 +5,7 @@
 //#include <QtGui>
 #include <iostream>
 #include <string>
+#include"ChessB.h"
 
 using namespace std;
 
@@ -14,11 +15,17 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     ui->setupUi(this);
 
 }
+MainWindow::MainWindow(QWidget *parent,ChessB *x): QMainWindow(parent), ui(new Ui::MainWindow)
+{
+    game=x;
+    ui->setupUi(this);
 
+}
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+/*
 void MainWindow::takeParameters(string target,string init, char type)
 {
 
@@ -27,17 +34,17 @@ void MainWindow::takeParameters(string target,string init, char type)
 
      if(type == 'h'){
 
-        ui->label_2->move(ui->label_2->x()+x1,ui->label_2->y()-y1);
+        ui->no1->move(ui->no1->x()+x1,ui->no1->y()-y1);
     }
     else if(type == 'b'){
-        ui->label_3->move(ui->label_3->x()+x1,ui->label_3->y()-y1);
+        ui->no2->move(ui->no2->x()+x1,ui->no2->y()-y1);
     }
 }
 void MainWindow::setInitial(string initial)
 {
     int x1 = initial[0] - 97;
     int y1  = initial[1]-48;
-    ui->label_2->move(ui->label_2->x()+85*x1,ui->label_2->y()-85*y1);
+    ui->no1->move(ui->no1->x()+85*x1,ui->no1->y()-85*y1);
 }
 
 void MainWindow::setInitial1(string initial)
@@ -60,7 +67,7 @@ void MainWindow::setInitial3(string initial)
     int x1 = initial[0] - 97;
     int y1  = initial[1]-48;
 
-    ui->no3->move(ui->no3->x()+85*x1,ui->no3->y()-85*y1);
+    ui->no2->move(ui->no2->x()+87.5*x1,ui->no2->y()-87.5*y1);
 }
 
 void MainWindow::on_pushButton_2_clicked()
@@ -74,8 +81,14 @@ void MainWindow::on_pushButton_3_clicked()
 {
         takeParameters("b2", "a1",'b');
 
+}*/
+
+
+
+
+
+void MainWindow::on_btn_GameStart_clicked()
+{
+    ui->KnightW->setGeometry()
 }
-
-
-
 

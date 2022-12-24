@@ -35,7 +35,7 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btn_Close">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -54,7 +54,7 @@
      <string>Close Window</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="ChessBoard">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -82,7 +82,7 @@
      <pixmap resource="Resources.qrc">:/resources/img/720px-Chessboard480.svg.png</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="KnightW">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -98,7 +98,7 @@
      <pixmap resource="Resources.qrc">:/resources/img/horseya.png</pixmap>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="btn_Knight">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -111,7 +111,7 @@
      <string>Knight button</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="btn_Bishop">
     <property name="geometry">
      <rect>
       <x>530</x>
@@ -124,27 +124,11 @@
      <string>Bishop button</string>
     </property>
    </widget>
-   <widget class="QLabel" name="pawn1">
+   <widget class="QLabel" name="PawnB2">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>460</y>
-      <width>61</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="pawn2">
-    <property name="geometry">
-     <rect>
-      <x>583</x>
-      <y>376</y>
+      <x>80</x>
+      <y>500</y>
       <width>71</width>
       <height>81</height>
      </rect>
@@ -156,7 +140,7 @@
      <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="BishopW">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -184,20 +168,33 @@
      <pixmap resource="Resources.qrc">:/resources/img/Bishopaya.png</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="no1">
+   <widget class="QLabel" name="PawnB1">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>800</y>
-      <width>63</width>
-      <height>71</height>
+      <x>80</x>
+      <y>600</y>
+      <width>71</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="Resources.qrc">:/resources/no1.png</pixmap>
+     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_GameStart">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>40</y>
+      <width>191</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start</string>
     </property>
    </widget>
   </widget>
@@ -207,7 +204,7 @@
      <x>0</x>
      <y>0</y>
      <width>2000</width>
-     <height>26</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
@@ -218,7 +215,7 @@
  </resources>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>btn_Close</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>

@@ -8,8 +8,9 @@
 #include <iostream>
 #include <string>
 #include <list>
-#define B false
-#define W true
+
+const bool B=false;
+const bool W=true;
 using namespace std;
 const int xMovesK[] = {2, 1,-1,-2,-2,-1, 1, 2};
 const int yMovesK[] = {1, 2, 2, 1,-1,-2,-2,-1};

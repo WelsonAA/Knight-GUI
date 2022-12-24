@@ -1,9 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-
 #include <QMainWindow>
+#include "ChessB.h"
+
 #include <QPixmap>
+//#include"ChessB.h"
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -22,17 +24,15 @@ public:
     void setInitial2(string initial);
     void setInitial3(string initial);
     MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent=nullptr,ChessB *x=nullptr);
     ~MainWindow();
 
 private slots:
 
-
-void on_pushButton_2_clicked();
-    void on_pushButton_3_clicked();
-
-    void on_label_4_linkActivated(const QString &link);
+    void on_btn_GameStart_clicked();
 
 private:
     Ui::MainWindow *ui;
+    ChessB* game;
 };
 #endif // MAINWINDOW_H
