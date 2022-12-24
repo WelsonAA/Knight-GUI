@@ -40,6 +40,28 @@ void MainWindow::setInitial(string initial)
     ui->label_2->move(ui->label_2->x()+85*x1,ui->label_2->y()-85*y1);
 }
 
+void MainWindow::setInitial1(string initial)
+{
+
+    int x1 = initial[0] - 97;
+    int y1  = initial[1]-48;
+    ui->no1->move(ui->no1->x()+85*x1,ui->no1->y()-85*y1);
+}
+void MainWindow::setInitial2(string initial)
+{
+
+    int x1 = initial[0] - 97;
+    int y1  = initial[1]-48;
+    ui->no2->move(ui->no2->x()+85*x1,ui->no2->y()-85*y1);
+}
+void MainWindow::setInitial3(string initial)
+{
+
+    int x1 = initial[0] - 97;
+    int y1  = initial[1]-48;
+
+    ui->no3->move(ui->no3->x()+85*x1,ui->no3->y()-85*y1);
+}
 
 void MainWindow::on_pushButton_2_clicked()
 {
@@ -53,4 +75,7 @@ void MainWindow::on_pushButton_3_clicked()
         takeParameters("b2", "a1",'b');
 
 }
+
+
+
 
