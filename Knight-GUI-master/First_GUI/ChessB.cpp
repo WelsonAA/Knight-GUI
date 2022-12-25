@@ -21,7 +21,9 @@ ChessB::ChessB(string src, string dest)
         for(int j=0;j<8;j++){
             temp[1] = '1'+i;
             temp[0] = 'a'+j;
-            v.push_back(Node(temp));
+            Node k(temp);
+            k.currentPiece = '+';
+            v.push_back(k);
         }
         cb.push_back(v);
     }
@@ -35,7 +37,7 @@ ChessB::ChessB(string src, string dest)
  out of the chess board (A chess piece can't go beyond A & H, and 1 & 8)
  */
 
-bool ChessB::isValid(char str[],int s) {
+bool ChessB::isValid(string str) {
     if(str[0]<'a'||str[0]>'h'||str[1]<'1'||str[1]>'8')
         return false;
     else

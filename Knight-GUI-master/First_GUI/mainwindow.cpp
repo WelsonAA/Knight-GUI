@@ -27,13 +27,14 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-/*
 void MainWindow::setInitial1(string initial)
 {
     int x1 = initial[0] - 97;
     int y1  = initial[1]-48;
     ui->no1->move(ui->no1->x()+85*x1,ui->no1->y()-85*y1);
 }
+/*
+
 void MainWindow::setPawn1(string pos)
 {
     int x1 = pos[0] - 97;
@@ -122,23 +123,34 @@ void MainWindow::setGame(string src,string dest)
     ChessB x(src,dest);
     game = x;
     game.addNexts();
+
+
 }
 
 void MainWindow::on_btn_GameStart_clicked()
 {
+     ui->lbl_result->setText(QString::fromStdString(""));
     string src=ui->te_Src->toPlainText().toLocal8Bit().constData();
     string dest=ui->te_Dest->toPlainText().toLocal8Bit().constData();
+    if(game.isValid(src) && game.isValid(dest)){
 
-    setGame(src,dest);
-    int x1 = src[0] - 97;
-    int y1  = src[1]-48;
+        setGame(src,dest);
+        int x1 = src[0] - 97;
+        int y1  = src[1]-48;
 
-    ui->KnightW->move(ui->KnightW->x()+85*x1,ui->KnightW->y()-85*y1);
-    ui->btn_GameStart->setEnabled(false);
+        ui->KnightW->move(ui->KnightW->x()+85*x1,ui->KnightW->y()-85*y1);
+        ui->btn_GameStart->setEnabled(false);
+    }
+    else
+    {
+        ui->lbl_result->setText(QString::fromStdString("Invalid position"));
+    }
+
+    if(!game.pathK.empty()){
+        setInitial1(game.pathK.front()->pos);
+        game.pathK.pop();}
+
 /*
-    if(!game->pathK.empty()){
-    setInitial1(game->pathK.front()->pos);
-    game->pathK.pop();}
 
     if(!game->pathK.empty()){
     setInitial2(game->pathK.front()->pos);
@@ -173,15 +185,29 @@ void MainWindow::on_btn_GameStart_clicked()
 
 void MainWindow::on_btn_addPwn_clicked()
 {
+    ui->lbl_result->setText(QString::fromStdString(""));
     string pwnPos=ui->te_Pwn->toPlainText().toLocal8Bit().constData();
+if(game.isValid(pwnPos) && game.cb[pwnPos[1]-'1'][pwnPos[0]-'a'].currentPiece == '+'){
+
     game.putPawn(pwnPos);
-//    QString qstr=QString::fromStdString(strcat("A Black Pawn is Entered at "));
-//    ui->lbl_result->setText(ui->te_Pwn->toPlainText());
     ui->te_Pwn->setPlainText(QString::fromStdString(""));
     setPawn(pwnPos);
+
+//                game.addPathK(game.dest, 0);
+//                game.choosePathK();
+
+}
+
+else
+{
+    ui->lbl_result->setText(QString::fromStdString("Invalid pawn position"));
+}
+
+
 }
 void MainWindow::setPawn(string pos)
 {
+
     static int x=1;
         int x1 = pos[0] - 97;
         int y1  = pos[1]- 48;
@@ -209,10 +235,15 @@ void MainWindow::setPawn(string pos)
         }else if(x==8){
             ui->PawnB8->move(ui->PawnB8->x()+85*x1,ui->PawnB8->y()-85*y1);
              x++;
+               ui->btn_addPwn->setEnabled(false);
+               ui->lbl_result->setText(QString::fromStdString("Maximum Number of Pawns is 8"));
         }
-        else{
-            ui->lbl_result->setText(QString::fromStdString("Maximum Number of Pawns is 8"));
-        }
+
+
+
+
+
+
 //    switch (x){
 //    case 1:{
 //        ui->PawnB1->move(ui->PawnB1->x()+85*x1,ui->PawnB1->y()-85*y1);

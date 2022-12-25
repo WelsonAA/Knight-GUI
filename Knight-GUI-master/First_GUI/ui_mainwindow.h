@@ -45,6 +45,7 @@ public:
     QLabel *PawnB6;
     QLabel *PawnB7;
     QLabel *PawnB8;
+    QLabel *no1;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -164,10 +165,14 @@ public:
         PawnB8->setObjectName("PawnB8");
         PawnB8->setGeometry(QRect(160, 800, 71, 81));
         PawnB8->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/pawnBlacks.png")));
+        no1 = new QLabel(centralwidget);
+        no1->setObjectName("no1");
+        no1->setGeometry(QRect(160, 800, 63, 61));
+        no1->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/1g.png")));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 2000, 17));
+        menubar->setGeometry(QRect(0, 0, 2000, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -198,6 +203,7 @@ public:
         PawnB6->setText(QString());
         PawnB7->setText(QString());
         PawnB8->setText(QString());
+        no1->setText(QString());
     } // retranslateUi
 
 };

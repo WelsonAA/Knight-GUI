@@ -400,6 +400,22 @@
      <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
     </property>
    </widget>
+   <widget class="QLabel" name="no1">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>800</y>
+      <width>63</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Resources.qrc">:/resources/img/1g.png</pixmap>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -407,7 +423,7 @@
      <x>0</x>
      <y>0</y>
      <width>2000</width>
-     <height>17</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

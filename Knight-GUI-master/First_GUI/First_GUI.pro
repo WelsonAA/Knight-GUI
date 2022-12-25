@@ -12,18 +12,15 @@ SOURCES += \
     ChessB.cpp \
     Node.cpp \
     main.cpp \
-    mainwindow.cpp \
-    openscreen.cpp
+    mainwindow.cpp
 
 HEADERS += \
     ChessB.h \
     Node.h \
-    mainwindow.h \
-    openscreen.h
+    mainwindow.h
 
 FORMS += \
-    mainwindow.ui \
-    openscreen.ui
+    mainwindow.ui
 
 TRANSLATIONS += \
     First_GUI_en_GB.ts
