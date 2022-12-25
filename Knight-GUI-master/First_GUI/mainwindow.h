@@ -18,8 +18,7 @@ class MainWindow : public QMainWindow
 
 public:
 
-    //void takeParameters(string target,string init, char type);
-     void setPawn1(string pos);
+    void setPawn(string pos);
     void setInitial1(string initial);
     void setInitial2(string initial);
     void setInitial3(string initial);
@@ -28,6 +27,7 @@ public:
     void setInitial6(string initial);
     void setInitial7(string initial);
     void setInitial8(string initial);
+
 //    ChessB takeKnightsPlaces();
     void setGame(ChessB *x);
     MainWindow(QWidget *parent = nullptr);

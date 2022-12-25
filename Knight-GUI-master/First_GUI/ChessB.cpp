@@ -129,8 +129,8 @@ void ChessB::choosePathK() {
     for(int j=1;((j<=6)&&(tmp!=this->dest));j++){
         for (int i = 0; ((i < 8) && (tmp->nextK[i] != NULL)); i++) {
             crt=tmp->nextK[i];
-            if((crt->safe==false))continue;
-            if((min ==NULL))
+            if(crt->safe==false)continue;
+            if(min ==NULL)
                 min = crt;
             else if (((crt->distanceToTargetK < min->distanceToTargetK))&&(crt->safe==true))
                 min = crt;

@@ -1,12 +1,11 @@
 #include "mainwindow.h"
-
 #include "ui_mainwindow.h"
 #include <QtCore>
 //#include <QtGui>
 #include <iostream>
 #include <string>
 #include"ChessB.h"
-
+#include<string>
 using namespace std;
 
 
@@ -173,5 +172,41 @@ void MainWindow::on_btn_GameStart_clicked()
 void MainWindow::on_btn_addPwn_clicked()
 {
     string pwnPos=ui->te_Pwn->toPlainText().toLocal8Bit().constData();
+    game->putPawn(pwnPos);
+//    QString qstr=QString::fromStdString(strcat("A Black Pawn is Entered at "));
+//    ui->lbl_result->setText(ui->te_Pwn->toPlainText());
+    ui->te_Pwn->setPlainText(QString::fromStdString(""));
+    setPawn(pwnPos);
+}
+void MainWindow::setPawn(string pos)
+{
+    static int x=1;
+    int x1 = pos[0] - 'a';
+    int y1  = pos[1]-'1';
+    if(x==1){
+        ui->PawnB1->move(ui->PawnB1->x()+85*x1,ui->PawnB1->y()-85*y1);
+         x++;
+    }else if(x==2){
+        ui->PawnB2->move(ui->PawnB2->x()+85*x1,ui->PawnB2->y()-85*y1);
+         x++;
+    }else{
+        ui->lbl_result->setText(QString::fromStdString("Maximum Number of Pawns is 8"));
+    }
+
+//    switch (x){
+//    case 1:{
+//        ui->PawnB1->move(ui->PawnB1->x()+85*x1,ui->PawnB1->y()-85*y1);
+//        x++;
+//        break;
+//    }
+//    case 2:{
+//
+//        x++;
+//        break;
+//    }
+//        default:{
+//        ui->lbl_result->setText(QString::fromStdString("Maximum Number of Pawns is 8"));
+//    }
+//    }
 }
 

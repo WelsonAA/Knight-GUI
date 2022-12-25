@@ -25,7 +25,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *btn_Close;
     QLabel *ChessBoard;
     QLabel *KnightW;
     QLabel *PawnB2;
@@ -58,21 +57,14 @@ public:
         MainWindow->setTabShape(QTabWidget::Rounded);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        btn_Close = new QPushButton(centralwidget);
-        btn_Close->setObjectName("btn_Close");
-        btn_Close->setGeometry(QRect(370, 60, 200, 50));
-        QFont font;
-        font.setPointSize(15);
-        font.setBold(false);
-        btn_Close->setFont(font);
         ChessBoard = new QLabel(centralwidget);
         ChessBoard->setObjectName("ChessBoard");
         ChessBoard->setGeometry(QRect(160, 110, 700, 700));
         ChessBoard->setBaseSize(QSize(700, 700));
-        QFont font1;
-        font1.setPointSize(18);
-        font1.setBold(true);
-        ChessBoard->setFont(font1);
+        QFont font;
+        font.setPointSize(18);
+        font.setBold(true);
+        ChessBoard->setFont(font);
         ChessBoard->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/720px-Chessboard480.svg.png")));
         KnightW = new QLabel(centralwidget);
         KnightW->setObjectName("KnightW");
@@ -99,23 +91,23 @@ public:
         btn_GameStart = new QPushButton(centralwidget);
         btn_GameStart->setObjectName("btn_GameStart");
         btn_GameStart->setGeometry(QRect(870, 340, 191, 41));
-        QFont font2;
-        font2.setPointSize(18);
-        btn_GameStart->setFont(font2);
+        QFont font1;
+        font1.setPointSize(18);
+        btn_GameStart->setFont(font1);
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setGeometry(QRect(840, 270, 141, 20));
-        QFont font3;
-        font3.setPointSize(15);
-        label->setFont(font3);
+        QFont font2;
+        font2.setPointSize(15);
+        label->setFont(font2);
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(840, 310, 141, 20));
-        label_2->setFont(font3);
+        label_2->setFont(font2);
         lbl_result = new QLabel(centralwidget);
         lbl_result->setObjectName("lbl_result");
         lbl_result->setGeometry(QRect(870, 510, 461, 101));
-        lbl_result->setFont(font2);
+        lbl_result->setFont(font1);
         te_Src = new QTextEdit(centralwidget);
         te_Src->setObjectName("te_Src");
         te_Src->setEnabled(true);
@@ -131,7 +123,7 @@ public:
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(840, 390, 141, 20));
-        label_3->setFont(font3);
+        label_3->setFont(font2);
         te_Pwn = new QTextEdit(centralwidget);
         te_Pwn->setObjectName("te_Pwn");
         te_Pwn->setEnabled(true);
@@ -140,7 +132,7 @@ public:
         te_Pwn->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         btn_addPwn = new QPushButton(centralwidget);
         btn_addPwn->setObjectName("btn_addPwn");
-        btn_addPwn->setGeometry(QRect(1140, 380, 191, 41));
+        btn_addPwn->setGeometry(QRect(1160, 370, 171, 61));
         btn_addPwn->setFont(font2);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -152,7 +144,6 @@ public:
         MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
-        QObject::connect(btn_Close, &QPushButton::clicked, MainWindow, qOverload<>(&QMainWindow::close));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -160,7 +151,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        btn_Close->setText(QCoreApplication::translate("MainWindow", "Close Window", nullptr));
         ChessBoard->setText(QString());
         KnightW->setText(QString());
         PawnB2->setText(QString());
@@ -171,7 +161,7 @@ public:
         label_2->setText(QCoreApplication::translate("MainWindow", "Target Position", nullptr));
         lbl_result->setText(QString());
         label_3->setText(QCoreApplication::translate("MainWindow", "Pawn Position", nullptr));
-        btn_addPwn->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
+        btn_addPwn->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
     } // retranslateUi
 
 };
