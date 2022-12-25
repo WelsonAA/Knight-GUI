@@ -1,40 +1,56 @@
 #include "mainwindow.h"
+
 #include "ui_mainwindow.h"
 #include <QtCore>
 //#include <QtGui>
 #include <iostream>
 #include <string>
 #include"ChessB.h"
-#include<string>
+
 using namespace std;
 
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow)
 {
 
+
     ui->setupUi(this);
 
+
 }
-/*
-MainWindow::MainWindow(QWidget *parent,ChessB *x): QMainWindow(parent), ui(new Ui::MainWindow)
-{
- ui->setupUi(this);
-    game=x;
+//MainWindow::MainWindow(QWidget *parent,ChessB *x): QMainWindow(parent), ui(new Ui::MainWindow)
+//{
+// ui->setupUi(this);
+//    game=x;
 
 
-}*/
+//}
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+/*
+void MainWindow::takeParameters(string target,string init, char type)
+{
+
+    int x1 = (target.at(0)-init.at(0))*83;
+    int y1 = (target.at(1)-init.at(1))*83;
+
+     if(type == 'h'){
+
+        ui->no1->move(ui->no1->x()+x1,ui->no1->y()-y1);
+    }
+    else if(type == 'b'){
+        ui->no2->move(ui->no2->x()+x1,ui->no2->y()-y1);
+    }
+}
+*/
 void MainWindow::setInitial1(string initial)
 {
     int x1 = initial[0] - 97;
     int y1  = initial[1]-48;
     ui->no1->move(ui->no1->x()+85*x1,ui->no1->y()-85*y1);
 }
-/*
-
 void MainWindow::setPawn1(string pos)
 {
     int x1 = pos[0] - 97;
@@ -108,49 +124,39 @@ void MainWindow::on_pushButton_2_clicked()
     //takeParameters("d3", "h1",'h');
 }
 
-//ChessB MainWindow::takeKnightsPlaces()
-//{
-////    QString initial = ui->initText->text();
-////    QString target = ui->targetText->text();
-////    ChessB x(initial.toStdString(), target.toStdString());
-////   return x;
-
-
-//}
-*/
-void MainWindow::setGame(string src,string dest)
+ChessB * MainWindow::takeKnightsPlaces()
 {
-    ChessB x(src,dest);
-    game = x;
-    game.addNexts();
+//    QString initial = ui->initialEnter->text();
+//    QString target = ui->targetEnter->text();
+
+//    ChessB *chess = new ChessB(initial.toStdString(), target.toStdString());
+//     game = chess;
 
 
 }
 
-void MainWindow::on_btn_GameStart_clicked()
+void MainWindow::getGame(ChessB *x)
 {
-     ui->lbl_result->setText(QString::fromStdString(""));
+
+    game = x;
+
+}
+void MainWindow::on_pushButton_clicked()
+{
     string src=ui->te_Src->toPlainText().toLocal8Bit().constData();
-    string dest=ui->te_Dest->toPlainText().toLocal8Bit().constData();
-    if(game.isValid(src) && game.isValid(dest)){
+        string dest=ui->te_Dest->toPlainText().toLocal8Bit().constData();
+        ChessB x(src,dest);
+        getGame(&x);
 
-        setGame(src,dest);
-        int x1 = src[0] - 97;
-        int y1  = src[1]-48;
+    int x1 = game->src->pos[0] - 97;
+    int y1  = game->src->pos[1]-48;
 
-        ui->KnightW->move(ui->KnightW->x()+85*x1,ui->KnightW->y()-85*y1);
-        ui->btn_GameStart->setEnabled(false);
-    }
-    else
-    {
-        ui->lbl_result->setText(QString::fromStdString("Invalid position"));
-    }
 
-    if(!game.pathK.empty()){
-        setInitial1(game.pathK.front()->pos);
-        game.pathK.pop();}
+    ui->KnightW->move(ui->KnightW->x()+85*x1,ui->KnightW->y()-85*y1);
 
-/*
+    if(!game->pathK.empty()){
+    setInitial1(game->pathK.front()->pos);
+    game->pathK.pop();}
 
     if(!game->pathK.empty()){
     setInitial2(game->pathK.front()->pos);
@@ -177,87 +183,7 @@ void MainWindow::on_btn_GameStart_clicked()
     setInitial8(game->pathK.front()->pos);
     game->pathK.pop();}
 
-*/
-
+    ui->pushButton->setEnabled(false);
 //   ui->KnightW->setGeometry(QRect(160+(game->src->pos[0]-'a')*87,710,87,87));
-}
-
-
-void MainWindow::on_btn_addPwn_clicked()
-{
-    ui->lbl_result->setText(QString::fromStdString(""));
-    string pwnPos=ui->te_Pwn->toPlainText().toLocal8Bit().constData();
-if(game.isValid(pwnPos) && game.cb[pwnPos[1]-'1'][pwnPos[0]-'a'].currentPiece == '+'){
-
-    game.putPawn(pwnPos);
-    ui->te_Pwn->setPlainText(QString::fromStdString(""));
-    setPawn(pwnPos);
-
-//                game.addPathK(game.dest, 0);
-//                game.choosePathK();
-
-}
-
-else
-{
-    ui->lbl_result->setText(QString::fromStdString("Invalid pawn position"));
-}
-
-
-}
-void MainWindow::setPawn(string pos)
-{
-
-    static int x=1;
-        int x1 = pos[0] - 97;
-        int y1  = pos[1]- 48;
-        if(x==1){
-            ui->PawnB1->move(ui->PawnB1->x()+85*x1,ui->PawnB1->y()-85*y1);
-             x++;
-        }else if(x==2){
-            ui->PawnB2->move(ui->PawnB2->x()+85*x1,ui->PawnB2->y()-85*y1);
-             x++;
-        }else if(x==3){
-            ui->PawnB3->move(ui->PawnB3->x()+85*x1,ui->PawnB3->y()-85*y1);
-             x++;
-        }else if(x==4){
-            ui->PawnB4->move(ui->PawnB4->x()+85*x1,ui->PawnB4->y()-85*y1);
-             x++;
-        }else if(x==5){
-            ui->PawnB5->move(ui->PawnB5->x()+85*x1,ui->PawnB5->y()-85*y1);
-             x++;
-        }else if(x==6){
-            ui->PawnB6->move(ui->PawnB6->x()+85*x1,ui->PawnB6->y()-85*y1);
-             x++;
-        }else if(x==7){
-            ui->PawnB7->move(ui->PawnB7->x()+85*x1,ui->PawnB7->y()-85*y1);
-             x++;
-        }else if(x==8){
-            ui->PawnB8->move(ui->PawnB8->x()+85*x1,ui->PawnB8->y()-85*y1);
-             x++;
-               ui->btn_addPwn->setEnabled(false);
-               ui->lbl_result->setText(QString::fromStdString("Maximum Number of Pawns is 8"));
-        }
-
-
-
-
-
-
-//    switch (x){
-//    case 1:{
-//        ui->PawnB1->move(ui->PawnB1->x()+85*x1,ui->PawnB1->y()-85*y1);
-//        x++;
-//        break;
-//    }
-//    case 2:{
-//
-//        x++;
-//        break;
-//    }
-//        default:{
-//        ui->lbl_result->setText(QString::fromStdString("Maximum Number of Pawns is 8"));
-//    }
-//    }
 }
 

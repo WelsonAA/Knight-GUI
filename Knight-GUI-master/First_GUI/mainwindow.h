@@ -18,7 +18,8 @@ class MainWindow : public QMainWindow
 
 public:
 
-    void setPawn(string pos);
+    //void takeParameters(string target,string init, char type);
+     void setPawn1(string pos);
     void setInitial1(string initial);
     void setInitial2(string initial);
     void setInitial3(string initial);
@@ -27,22 +28,22 @@ public:
     void setInitial6(string initial);
     void setInitial7(string initial);
     void setInitial8(string initial);
-
-//    ChessB takeKnightsPlaces();
-    void setGame(string src,string dest);
-    MainWindow(QWidget *parent = nullptr);
-    //MainWindow(QWidget *parent= nullptr,ChessB *x=nullptr);
+    ChessB * takeKnightsPlaces();
+    void getGame(ChessB *x);
+  MainWindow(QWidget *parent = nullptr);
+//    MainWindow(QWidget *parent= nullptr,ChessB *x=nullptr);
     ~MainWindow();
-    ChessB game;
+
 private slots:
+void on_pushButton_2_clicked();
+void on_pushButton_3_clicked();
+void on_pushButton_clicked();
 
-    void on_btn_GameStart_clicked();
-
-    void on_btn_addPwn_clicked();
+//    void on_btn_GameStart_clicked();
 
 private:
     Ui::MainWindow *ui;
-
+    ChessB* game;
 
 };
 #endif // MAINWINDOW_H

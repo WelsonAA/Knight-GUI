@@ -35,6 +35,25 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btn_Close">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>60</y>
+      <width>200</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Close Window</string>
+    </property>
+   </widget>
    <widget class="QLabel" name="ChessBoard">
     <property name="geometry">
      <rect>
@@ -139,283 +158,6 @@
      <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_GameStart">
-    <property name="geometry">
-     <rect>
-      <x>870</x>
-      <y>340</y>
-      <width>191</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Start</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>840</x>
-      <y>270</y>
-      <width>141</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Starting Position</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>840</x>
-      <y>310</y>
-      <width>141</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Target Position</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_result">
-    <property name="geometry">
-     <rect>
-      <x>870</x>
-      <y>510</y>
-      <width>461</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="te_Src">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>1000</x>
-      <y>273</y>
-      <width>111</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="te_Dest">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>1000</x>
-      <y>310</y>
-      <width>111</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>840</x>
-      <y>390</y>
-      <width>141</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Pawn Position</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="te_Pwn">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>1000</x>
-      <y>390</y>
-      <width>111</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_addPwn">
-    <property name="geometry">
-     <rect>
-      <x>1160</x>
-      <y>370</y>
-      <width>171</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Add</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="PawnB3">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>800</y>
-      <width>71</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="PawnB4">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>800</y>
-      <width>71</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="PawnB5">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>800</y>
-      <width>71</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="PawnB6">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>800</y>
-      <width>71</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="PawnB7">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>800</y>
-      <width>71</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="PawnB8">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>800</y>
-      <width>71</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="no1">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>800</y>
-      <width>63</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="Resources.qrc">:/resources/img/1g.png</pixmap>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -432,5 +174,22 @@
  <resources>
   <include location="Resources.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btn_Close</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>564</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>559</x>
+     <y>187</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
