@@ -2,14 +2,17 @@
 // Created by George Welson on 28-Nov-22.
 //
 #include "ChessB.h"
-#include <queue>
+
+
 /*
  * 1- This is the constructor of the chess game which builds the 8 x 8 chess board with the nodes
  * 2- A node represent a square in the board e.g. : a1 , h8 , etc.
  * 3- A vector is used to insert all nodes into it thus implementing the idea of "Graph"
  *   which makes it easy to traverse through the board
  * */
+ChessB::ChessB(){
 
+}
 ChessB::ChessB(string src, string dest)
 {
     string temp="a1";
@@ -27,11 +30,6 @@ ChessB::ChessB(string src, string dest)
     this->dest->distanceToTargetK=0;
 }
 
-/*
-ChessB::ChessB()
-{
-
-}*/
 /*
  4-This function is implemented to avoid the chess pieces used (knight, pawn, bishop) to go
  out of the chess board (A chess piece can't go beyond A & H, and 1 & 8)
@@ -129,8 +127,8 @@ void ChessB::choosePathK() {
     for(int j=1;((j<=6)&&(tmp!=this->dest));j++){
         for (int i = 0; ((i < 8) && (tmp->nextK[i] != NULL)); i++) {
             crt=tmp->nextK[i];
-            if(crt->safe==false)continue;
-            if(min ==NULL)
+            if((crt->safe==false))continue;
+            if((min ==NULL))
                 min = crt;
             else if (((crt->distanceToTargetK < min->distanceToTargetK))&&(crt->safe==true))
                 min = crt;
@@ -171,21 +169,23 @@ void ChessB::choosePathB() {
 }
 
 void ChessB::putKnight(string pos) {
-    this->cb[pos[1] - '1'][pos[0] - 'a'].currentPiece=k;
+    this->cb[pos[1] - '1'][pos[0] - 'a'].currentPiece='k';
 }
 
 void ChessB::putPawn(string pos) {
-    this->cb[pos[1] - '1'][pos[0] - 'a'].currentPiece=p;
+    int x=pos[1] - 49;
+    int y=pos[0] - 97;
+    this->cb[x][y].currentPiece='p';
     for(int i=0;(i<2);i++){
         if(this->cb[pos[1] - '1'][pos[0] - 'a'].nextP[i]==NULL)
             continue;
         this->cb[pos[1] - '1'][pos[0] - 'a'].nextP[i]->safe= false;
     }
-
 }
 
 void ChessB::putBishop(string pos) {
-    this->cb[pos[1] - '1'][pos[0] - 'a'].currentPiece=b;
+    this->cb[pos[1] - '1'][pos[0] - 'a'].currentPiece='b';
 }
+
 
 

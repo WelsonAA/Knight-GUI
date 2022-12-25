@@ -128,20 +128,13 @@ debug/qrc_Resources.cpp: Resources.qrc \
 		img/3g.png \
 		img/5g.png \
 		img/6g.png \
-		img/Chess-Board-PNG-Images-HD.png \
 		img/1g.png \
-		img/Pawn.png \
 		img/horseya.png \
-		img/chesshorse.png \
-		img/White_Knight_resized.png \
 		img/7g.png \
 		img/720px-Chessboard480.svg.png \
 		img/2g.png \
 		img/8g.png \
-		img/bishopGood.png \
-		img/bishop.png \
 		img/4g.png \
-		img/horse2.png \
 		img/Bishopaya.png
 	C:\Qt\6.4.0\mingw_64\bin\rcc.exe -name Resources --no-zstd Resources.qrc -o debug\qrc_Resources.cpp
 
@@ -686,6 +679,13 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/6.4.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/6.4.0/mingw_64/include/QtWidgets/QStatusBar \
 		C:/Qt/6.4.0/mingw_64/include/QtWidgets/qstatusbar.h \
+		C:/Qt/6.4.0/mingw_64/include/QtWidgets/QTextEdit \
+		C:/Qt/6.4.0/mingw_64/include/QtWidgets/qtextedit.h \
+		C:/Qt/6.4.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.4.0/mingw_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.4.0/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.4.0/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.4.0/mingw_64/include/QtGui/qpen.h \
 		C:/Qt/6.4.0/mingw_64/include/QtWidgets/QWidget \
 		C:/Qt/6.4.0/mingw_64/include/QtCore/QtCore \
 		C:/Qt/6.4.0/mingw_64/include/QtCore/QtCoreDepends \

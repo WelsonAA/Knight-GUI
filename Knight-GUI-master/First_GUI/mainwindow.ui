@@ -304,6 +304,102 @@
      <string>Add</string>
     </property>
    </widget>
+   <widget class="QLabel" name="PawnB3">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>800</y>
+      <width>71</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="PawnB4">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>800</y>
+      <width>71</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="PawnB5">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>800</y>
+      <width>71</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="PawnB6">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>800</y>
+      <width>71</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="PawnB7">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>800</y>
+      <width>71</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="PawnB8">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>800</y>
+      <width>71</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Resources.qrc">:/resources/img/pawnBlacks.png</pixmap>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -311,7 +407,7 @@
      <x>0</x>
      <y>0</y>
      <width>2000</width>
-     <height>24</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>

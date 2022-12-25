@@ -39,6 +39,12 @@ public:
     QLabel *label_3;
     QTextEdit *te_Pwn;
     QPushButton *btn_addPwn;
+    QLabel *PawnB3;
+    QLabel *PawnB4;
+    QLabel *PawnB5;
+    QLabel *PawnB6;
+    QLabel *PawnB7;
+    QLabel *PawnB8;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -134,10 +140,34 @@ public:
         btn_addPwn->setObjectName("btn_addPwn");
         btn_addPwn->setGeometry(QRect(1160, 370, 171, 61));
         btn_addPwn->setFont(font2);
+        PawnB3 = new QLabel(centralwidget);
+        PawnB3->setObjectName("PawnB3");
+        PawnB3->setGeometry(QRect(160, 800, 71, 81));
+        PawnB3->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/pawnBlacks.png")));
+        PawnB4 = new QLabel(centralwidget);
+        PawnB4->setObjectName("PawnB4");
+        PawnB4->setGeometry(QRect(160, 800, 71, 81));
+        PawnB4->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/pawnBlacks.png")));
+        PawnB5 = new QLabel(centralwidget);
+        PawnB5->setObjectName("PawnB5");
+        PawnB5->setGeometry(QRect(160, 800, 71, 81));
+        PawnB5->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/pawnBlacks.png")));
+        PawnB6 = new QLabel(centralwidget);
+        PawnB6->setObjectName("PawnB6");
+        PawnB6->setGeometry(QRect(160, 800, 71, 81));
+        PawnB6->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/pawnBlacks.png")));
+        PawnB7 = new QLabel(centralwidget);
+        PawnB7->setObjectName("PawnB7");
+        PawnB7->setGeometry(QRect(160, 800, 71, 81));
+        PawnB7->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/pawnBlacks.png")));
+        PawnB8 = new QLabel(centralwidget);
+        PawnB8->setObjectName("PawnB8");
+        PawnB8->setGeometry(QRect(160, 800, 71, 81));
+        PawnB8->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/pawnBlacks.png")));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 2000, 24));
+        menubar->setGeometry(QRect(0, 0, 2000, 17));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -162,6 +192,12 @@ public:
         lbl_result->setText(QString());
         label_3->setText(QCoreApplication::translate("MainWindow", "Pawn Position", nullptr));
         btn_addPwn->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
+        PawnB3->setText(QString());
+        PawnB4->setText(QString());
+        PawnB5->setText(QString());
+        PawnB6->setText(QString());
+        PawnB7->setText(QString());
+        PawnB8->setText(QString());
     } // retranslateUi
 
 };

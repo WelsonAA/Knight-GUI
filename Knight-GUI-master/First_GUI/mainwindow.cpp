@@ -117,19 +117,21 @@ void MainWindow::on_pushButton_2_clicked()
 
 //}
 */
-void MainWindow::setGame(ChessB *x)
+void MainWindow::setGame(string src,string dest)
 {
+    ChessB x(src,dest);
     game = x;
+    game.addNexts();
 }
 
 void MainWindow::on_btn_GameStart_clicked()
 {
     string src=ui->te_Src->toPlainText().toLocal8Bit().constData();
     string dest=ui->te_Dest->toPlainText().toLocal8Bit().constData();
-    ChessB x(src,dest);
-    setGame(&x);
-    int x1 = game->src->pos[0] - 97;
-    int y1  = game->src->pos[1]-48;
+
+    setGame(src,dest);
+    int x1 = src[0] - 97;
+    int y1  = src[1]-48;
 
     ui->KnightW->move(ui->KnightW->x()+85*x1,ui->KnightW->y()-85*y1);
     ui->btn_GameStart->setEnabled(false);
@@ -172,7 +174,7 @@ void MainWindow::on_btn_GameStart_clicked()
 void MainWindow::on_btn_addPwn_clicked()
 {
     string pwnPos=ui->te_Pwn->toPlainText().toLocal8Bit().constData();
-    game->putPawn(pwnPos);
+    game.putPawn(pwnPos);
 //    QString qstr=QString::fromStdString(strcat("A Black Pawn is Entered at "));
 //    ui->lbl_result->setText(ui->te_Pwn->toPlainText());
     ui->te_Pwn->setPlainText(QString::fromStdString(""));
@@ -181,18 +183,36 @@ void MainWindow::on_btn_addPwn_clicked()
 void MainWindow::setPawn(string pos)
 {
     static int x=1;
-    int x1 = pos[0] - 'a';
-    int y1  = pos[1]-'1';
-    if(x==1){
-        ui->PawnB1->move(ui->PawnB1->x()+85*x1,ui->PawnB1->y()-85*y1);
-         x++;
-    }else if(x==2){
-        ui->PawnB2->move(ui->PawnB2->x()+85*x1,ui->PawnB2->y()-85*y1);
-         x++;
-    }else{
-        ui->lbl_result->setText(QString::fromStdString("Maximum Number of Pawns is 8"));
-    }
-
+        int x1 = pos[0] - 97;
+        int y1  = pos[1]- 48;
+        if(x==1){
+            ui->PawnB1->move(ui->PawnB1->x()+85*x1,ui->PawnB1->y()-85*y1);
+             x++;
+        }else if(x==2){
+            ui->PawnB2->move(ui->PawnB2->x()+85*x1,ui->PawnB2->y()-85*y1);
+             x++;
+        }else if(x==3){
+            ui->PawnB3->move(ui->PawnB3->x()+85*x1,ui->PawnB3->y()-85*y1);
+             x++;
+        }else if(x==4){
+            ui->PawnB4->move(ui->PawnB4->x()+85*x1,ui->PawnB4->y()-85*y1);
+             x++;
+        }else if(x==5){
+            ui->PawnB5->move(ui->PawnB5->x()+85*x1,ui->PawnB5->y()-85*y1);
+             x++;
+        }else if(x==6){
+            ui->PawnB6->move(ui->PawnB6->x()+85*x1,ui->PawnB6->y()-85*y1);
+             x++;
+        }else if(x==7){
+            ui->PawnB7->move(ui->PawnB7->x()+85*x1,ui->PawnB7->y()-85*y1);
+             x++;
+        }else if(x==8){
+            ui->PawnB8->move(ui->PawnB8->x()+85*x1,ui->PawnB8->y()-85*y1);
+             x++;
+        }
+        else{
+            ui->lbl_result->setText(QString::fromStdString("Maximum Number of Pawns is 8"));
+        }
 //    switch (x){
 //    case 1:{
 //        ui->PawnB1->move(ui->PawnB1->x()+85*x1,ui->PawnB1->y()-85*y1);

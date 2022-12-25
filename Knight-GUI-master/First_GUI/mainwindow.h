@@ -29,11 +29,11 @@ public:
     void setInitial8(string initial);
 
 //    ChessB takeKnightsPlaces();
-    void setGame(ChessB *x);
+    void setGame(string src,string dest);
     MainWindow(QWidget *parent = nullptr);
     //MainWindow(QWidget *parent= nullptr,ChessB *x=nullptr);
     ~MainWindow();
-
+    ChessB game;
 private slots:
 
     void on_btn_GameStart_clicked();
@@ -42,7 +42,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    ChessB* game;
+
 
 };
 #endif // MAINWINDOW_H
