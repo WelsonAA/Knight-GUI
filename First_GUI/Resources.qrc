@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>img/Bishopaya.png</file>
+        <file>img/horseya.png</file>
+        <file>img/720px-Chessboard480.svg.png</file>
+        <file>img/pawnBlacks.png</file>
+        <file>img/1g.png</file>
+        <file>img/2g.png</file>
+        <file>img/3g.png</file>
+        <file>img/4g.png</file>
+        <file>img/5g.png</file>
+        <file>img/6g.png</file>
+        <file>img/7g.png</file>
+        <file>img/8g.png</file>
+    </qresource>
+</RCC>
