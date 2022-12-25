@@ -1,4 +1,4 @@
-#include "openscreen.h"
+/*#include "openscreen.h"
 #include "ChessB.h"
 
 #include "ui_openscreen.h"
@@ -27,5 +27,5 @@ MainWindow w(nullptr, &x);
     mainwindow = new MainWindow(this,&x);
 
     mainwindow->show();
-}
+}*/
 

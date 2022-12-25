@@ -2,7 +2,7 @@
 // Created by George Welson on 28-Nov-22.
 //
 #include "ChessB.h"
-#include <Queue>
+#include <queue>
 /*
  * 1- This is the constructor of the chess game which builds the 8 x 8 chess board with the nodes
  * 2- A node represent a square in the board e.g. : a1 , h8 , etc.
@@ -26,10 +26,12 @@ ChessB::ChessB(string src, string dest)
     this->dest=&this->cb[dest[1] - '1'][dest[0] - 'a'];
     this->dest->distanceToTargetK=0;
 }
+
+/*
 ChessB::ChessB()
 {
 
-}
+}*/
 /*
  4-This function is implemented to avoid the chess pieces used (knight, pawn, bishop) to go
  out of the chess board (A chess piece can't go beyond A & H, and 1 & 8)

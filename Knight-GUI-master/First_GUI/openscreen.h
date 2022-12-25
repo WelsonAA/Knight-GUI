@@ -1,4 +1,4 @@
-#ifndef OPENSCREEN_H
+/*#ifndef OPENSCREEN_H
 #define OPENSCREEN_H
 
 #include "mainwindow.h"
@@ -24,4 +24,4 @@ private:
     MainWindow *mainwindow;
 };
 
-#endif // OPENSCREEN_H
+#endif // OPENSCREEN_H*/

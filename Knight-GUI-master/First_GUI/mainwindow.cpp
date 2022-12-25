@@ -16,33 +16,19 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     ui->setupUi(this);
 
 }
+/*
 MainWindow::MainWindow(QWidget *parent,ChessB *x): QMainWindow(parent), ui(new Ui::MainWindow)
 {
  ui->setupUi(this);
     game=x;
 
 
-}
+}*/
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 /*
-void MainWindow::takeParameters(string target,string init, char type)
-{
-
-    int x1 = (target.at(0)-init.at(0))*83;
-    int y1 = (target.at(1)-init.at(1))*83;
-
-     if(type == 'h'){
-
-        ui->no1->move(ui->no1->x()+x1,ui->no1->y()-y1);
-    }
-    else if(type == 'b'){
-        ui->no2->move(ui->no2->x()+x1,ui->no2->y()-y1);
-    }
-}
-*/
 void MainWindow::setInitial1(string initial)
 {
     int x1 = initial[0] - 97;
@@ -131,20 +117,24 @@ void MainWindow::on_pushButton_2_clicked()
 
 
 //}
-
-void MainWindow::getGame(ChessB *x)
+*/
+void MainWindow::setGame(ChessB *x)
 {
     game = x;
 }
+
 void MainWindow::on_btn_GameStart_clicked()
 {
-
+    string src=ui->te_Src->toPlainText().toLocal8Bit().constData();
+    string dest=ui->te_Dest->toPlainText().toLocal8Bit().constData();
+    ChessB x(src,dest);
+    setGame(&x);
     int x1 = game->src->pos[0] - 97;
     int y1  = game->src->pos[1]-48;
 
-
     ui->KnightW->move(ui->KnightW->x()+85*x1,ui->KnightW->y()-85*y1);
-
+    ui->btn_GameStart->setEnabled(false);
+/*
     if(!game->pathK.empty()){
     setInitial1(game->pathK.front()->pos);
     game->pathK.pop();}
@@ -174,8 +164,14 @@ void MainWindow::on_btn_GameStart_clicked()
     setInitial8(game->pathK.front()->pos);
     game->pathK.pop();}
 
+*/
 
-    ui->btn_GameStart->setEnabled(false);
 //   ui->KnightW->setGeometry(QRect(160+(game->src->pos[0]-'a')*87,710,87,87));
+}
+
+
+void MainWindow::on_btn_addPwn_clicked()
+{
+    string pwnPos=ui->te_Pwn->toPlainText().toLocal8Bit().constData();
 }
 
