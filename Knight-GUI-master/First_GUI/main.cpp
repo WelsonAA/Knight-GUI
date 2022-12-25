@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <iostream>
 #include "ChessB.h"
+#include "openscreen.h"
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
@@ -9,28 +10,22 @@ int main(int argc, char *argv[])
 {
 
 
-    ChessB x("h8", "a8");
+
+    ChessB x("h1", "h4");
            x.addNexts();
+           x.putPawn("f4");
            x.addPathK(x.dest, 0);
            x.choosePathK();
 
     QApplication ab(argc, argv);
 
-MainWindow w(nullptr,&x);
+    openscreen s;
 
 
-       //w.setInitial(x.src->pos);
-/*
- if(!x.pathK.empty()){
- w.setInitial1(x.pathK.front()->pos);
- x.pathK.pop();}
- if(!x.pathK.empty()){
- w.setInitial2(x.pathK.front()->pos);
- x.pathK.pop();}
- if(!x.pathK.empty()){
- w.setInitial3(x.pathK.front()->pos);
- x.pathK.pop();}*/
+//       w.setPawn1("f4");
 
-  w.show();
+
+
+  s.show();
     return ab.exec();
 }

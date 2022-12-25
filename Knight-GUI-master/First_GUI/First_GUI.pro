@@ -1,5 +1,5 @@
 QT       += core gui
-
+QT += widgets
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
@@ -12,15 +12,18 @@ SOURCES += \
     ChessB.cpp \
     Node.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    openscreen.cpp
 
 HEADERS += \
     ChessB.h \
     Node.h \
-    mainwindow.h
+    mainwindow.h \
+    openscreen.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    openscreen.ui
 
 TRANSLATIONS += \
     First_GUI_en_GB.ts

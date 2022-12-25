@@ -8,9 +8,9 @@
 //#include"ChessB.h"
 using namespace std;
 
-QT_BEGIN_NAMESPACE
+
 namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+
 
 class MainWindow : public QMainWindow
 {
@@ -18,21 +18,30 @@ class MainWindow : public QMainWindow
 
 public:
 
-    void takeParameters(string target,string init, char type);
-    void setInitial(string initial);
+    //void takeParameters(string target,string init, char type);
+     void setPawn1(string pos);
     void setInitial1(string initial);
     void setInitial2(string initial);
     void setInitial3(string initial);
-    MainWindow(QWidget *parent = nullptr);
-    MainWindow(QWidget *parent=nullptr,ChessB *x=nullptr);
+    void setInitial4(string initial);
+    void setInitial5(string initial);
+    void setInitial6(string initial);
+    void setInitial7(string initial);
+    void setInitial8(string initial);
+//    ChessB takeKnightsPlaces();
+    void getGame(ChessB *x);
+  MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent= nullptr,ChessB *x=nullptr);
     ~MainWindow();
 
 private slots:
-
+void on_pushButton_2_clicked();
+void on_pushButton_3_clicked();
     void on_btn_GameStart_clicked();
 
 private:
     Ui::MainWindow *ui;
     ChessB* game;
+
 };
 #endif // MAINWINDOW_H

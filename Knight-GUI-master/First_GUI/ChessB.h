@@ -28,6 +28,7 @@ public:
 
 //    }
     ChessB(string src,string dest);
+    ChessB();
     bool isValid(char str[],int s=2);//Makes sure position of pieces is valid
     void addNexts();//creates pieces Nodes
     void printNode(string str);

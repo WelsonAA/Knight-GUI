@@ -38,7 +38,7 @@
    <widget class="QPushButton" name="btn_Close">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>370</x>
       <y>60</y>
       <width>200</width>
       <height>50</height>
@@ -98,37 +98,11 @@
      <pixmap resource="Resources.qrc">:/resources/img/horseya.png</pixmap>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_Knight">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>60</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Knight button</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_Bishop">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>60</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Bishop button</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="PawnB2">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>500</y>
+      <x>160</x>
+      <y>800</y>
       <width>71</width>
       <height>81</height>
      </rect>
@@ -171,8 +145,8 @@
    <widget class="QLabel" name="PawnB1">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>600</y>
+      <x>160</x>
+      <y>800</y>
       <width>71</width>
       <height>81</height>
      </rect>
@@ -187,10 +161,10 @@
    <widget class="QPushButton" name="btn_GameStart">
     <property name="geometry">
      <rect>
-      <x>740</x>
-      <y>40</y>
+      <x>880</x>
+      <y>370</y>
       <width>191</width>
-      <height>61</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -204,7 +178,7 @@
      <x>0</x>
      <y>0</y>
      <width>2000</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
@@ -221,8 +195,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>434</x>
-     <y>223</y>
+     <x>564</x>
+     <y>135</y>
     </hint>
     <hint type="destinationlabel">
      <x>559</x>
